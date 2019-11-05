@@ -257,7 +257,7 @@
             :thumb-style="{
               right: '-13px',
               borderRadius: '2px',
-              background: '#7c41ba',
+              background: '#485aa3',
               width: '10px',
               opacity: 0.8
             }"

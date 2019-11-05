@@ -98,7 +98,7 @@
         color="primary"
         :thumb-style="{
           right: '0px',
-          background: '#7c41ba',
+          background: '#485aa3',
           width: '8px',
           opacity: 1
         }"
