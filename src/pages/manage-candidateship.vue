@@ -197,7 +197,8 @@
 
       <div
         v-if="
-          getIsCandidate &&
+          show_unstake_ui &&
+            getIsCandidate &&
             !getIsCandidate.is_active &&
             parseFloat(getIsCandidate.locked_tokens)
         "
@@ -265,6 +266,7 @@ export default {
   },
   data() {
     return {
+      show_unstake_ui: false,
       inputs: {
         stakeamount: null,
         requestedpay: null
