@@ -286,7 +286,7 @@ export default {
       pagination: {
         page: 1,
         max: 1,
-        items_per_page: 24
+        items_per_page: 48
       },
       filter: "",
       oldvotes: [],

@@ -233,7 +233,7 @@ export async function transact(
       });
     }
     // add a delay befor returning the transaction result. this to give nodes time to sync.
-    return await new Promise(resolve => setTimeout(() => resolve(result), 250));
+    return await new Promise(resolve => setTimeout(() => resolve(result), 750));
   } catch (e) {
     console.log(e);
     let message = "unknown_error";

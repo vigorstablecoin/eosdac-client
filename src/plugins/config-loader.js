@@ -81,6 +81,8 @@ class ConfigLoader {
         return this.configFile.accounts.treasuryAccount.name;
       case "financialaccounts":
         return this.configFile.financial_page_graphs;
+      case "external":
+	return this.configFile.external;
       default:
         return `***${configquery} not yet subscribed in config-loader***`;
     }
