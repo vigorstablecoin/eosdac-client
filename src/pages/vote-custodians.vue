@@ -150,7 +150,7 @@
               <q-btn
                 style="font-weight: 300;"
                 v-bind:class="{ pulse: votesdidchange }"
-                class="full-width items-baseline"
+                class="full-width items-baseline q-mb-md"
                 color="primary"
                 size="xl"
                 @click="voteForCandidates()"
@@ -171,47 +171,59 @@
                   }}</span>
                 </div>
               </q-btn>
-              <q-list class="q-mt-md">
-                <transition-group name="list" tag="p">
-                  <q-item
-                    class="bg-bg2"
-                    style="height:66px;margin-bottom:1px;"
-                    v-for="(cand, i) in getSelectedCand"
-                    :key="i"
-                  >
-                    <q-item-side>
-                      <q-item-tile class="">
-                        <profile-pic
-                          :accountname="cand.candidate_name"
-                          :scale="0.6"
-                        />
-                      </q-item-tile>
-                    </q-item-side>
-                    <q-item-main>
-                      <router-link
-                        class="q-headline a2"
-                        :to="{ path: '/profile/' + cand.candidate_name }"
-                      >
-                        <div
-                          class="q-ma-none"
-                          style="min-width:100px; overflow:hidden"
+
+              <q-scroll-area
+                style="width: 100%; height: 300px;"
+                :thumb-style="{
+                  right: '-11px',
+                  borderRadius: '2px',
+                  background: '#485aa3',
+                  width: '10px',
+                  opacity: 0.8
+                }"
+              >
+                <q-list no-border class=" no-padding">
+                  <transition-group name="list" tag="div">
+                    <q-item
+                      class="bg-bg2"
+                      style="height:66px;margin-bottom:1px;"
+                      v-for="cand in getSelectedCand"
+                      :key="cand.candidate_name"
+                    >
+                      <q-item-side>
+                        <q-item-tile class="">
+                          <profile-pic
+                            :accountname="cand.candidate_name"
+                            :scale="0.6"
+                          />
+                        </q-item-tile>
+                      </q-item-side>
+                      <q-item-main>
+                        <router-link
+                          class="q-headline a2"
+                          :to="{ path: '/profile/' + cand.candidate_name }"
                         >
-                          {{ cand.candidate_name }}
-                        </div>
-                      </router-link>
-                    </q-item-main>
-                    <q-item-side right>
-                      <q-btn
-                        dense
-                        round
-                        color="primary"
-                        icon="close"
-                        @click="deleteFromVoteList(cand.candidate_name)"
-                      />
-                    </q-item-side>
-                  </q-item>
-                </transition-group>
-              </q-list>
+                          <div
+                            class="q-ma-none"
+                            style="min-width:100px; overflow:hidden"
+                          >
+                            {{ cand.candidate_name }}
+                          </div>
+                        </router-link>
+                      </q-item-main>
+                      <q-item-side right>
+                        <q-btn
+                          dense
+                          round
+                          color="primary"
+                          icon="close"
+                          @click="deleteFromVoteList(cand.candidate_name)"
+                        />
+                      </q-item-side>
+                    </q-item>
+                  </transition-group>
+                </q-list>
+              </q-scroll-area>
               <!-- <pre>{{getSelectedCand}}</pre> -->
               <!-- <pre>{{getTokenBalance}}</pre> -->
               <!-- <pre>{{votesdidchange}}</pre> -->
