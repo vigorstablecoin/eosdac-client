@@ -119,7 +119,6 @@ let routes = [
         ]
       }
     ]
-    /*
   },
   {
     path: "/member",
@@ -127,16 +126,19 @@ let routes = [
     children: [
       { path: "", component: () => import("../extensions/pages/home") },
       {
-        path: "new-worker-proposal",
-        component: () => import("pages/member/new-worker-proposal")
-      },
-      {
-        path: "my-worker-proposals",
-        component: () => import("pages/member/my-worker-proposals")
+        path: "claim",
+        component: () => import("pages/member/claim")
       }
+      // {
+      //   path: "new-worker-proposal",
+      //   component: () => import("pages/member/new-worker-proposal")
+      // },
+      // {
+      //   path: "my-worker-proposals",
+      //   component: () => import("pages/member/my-worker-proposals")
+      // }
     ],
     beforeEnter: Guards.memberCheck
-*/
   }
 ];
 

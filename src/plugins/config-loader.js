@@ -82,7 +82,9 @@ class ConfigLoader {
       case "financialaccounts":
         return this.configFile.financial_page_graphs;
       case "external":
-	return this.configFile.external;
+        return this.configFile.external;
+      case "districontract":
+        return this.configFile.contracts.distri.name;
       default:
         return `***${configquery} not yet subscribed in config-loader***`;
     }

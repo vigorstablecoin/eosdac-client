@@ -5,7 +5,13 @@
       <q-item-main :label="$t('menu.member_tools')" class="text-text1" />
     </template>
     <div class="bg-bg1">
-      <q-item class="q-pl-lg" link to="/member/new-worker-proposal">
+      <q-item class="q-pl-lg" link to="/member/claim">
+        <q-item-main
+          label="Claim Payments"
+          class="text-text1 text-weight-light"
+        />
+      </q-item>
+      <!-- <q-item class="q-pl-lg" link to="/member/new-worker-proposal">
         <q-item-main
           :label="$t('menu.new_worker_proposal')"
           class="text-text1 text-weight-light"
@@ -16,7 +22,7 @@
           :label="$t('menu.my_worker_proposals')"
           class="text-text1 text-weight-light"
         />
-      </q-item>
+      </q-item> -->
     </div>
   </q-collapsible>
 </template>

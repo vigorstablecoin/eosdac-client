@@ -96,7 +96,8 @@
     "VOTECUST_VOTING_IS_DISABLED": "Voting is currently disabled.",
     "VOTEPROP_INVALID_PROPOSAL_STATE": "Invalid proposal state to accept votes.",
     "VOTEPROP_INVALID_VOTE": "Invalid vote for the current proposal state.",
-    "VOTEPROP_PROPOSAL_NOT_FOUND": "Proposal not found."
+    "VOTEPROP_PROPOSAL_NOT_FOUND": "Proposal not found.",
+    "NOTHING_TO_CLAIM": "You don't have anything to claim."
   },
   "dac_financials":{
     "clear": "Clear All",
