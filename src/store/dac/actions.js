@@ -156,15 +156,12 @@ export async function fetchCustodianPermissions({
 
 export async function fetchWorkerProposals({}, payload = {}) {
   let url = this._vm.$configFile.get("memberclientstateapi");
-  const header = {
-    "X-DAC-Name": this._vm.$configFile.get("dacscope")
-  };
+
   return this._vm
     .$axios({
       method: "get",
       url: `${url}/proposals`,
-      params: payload,
-      headers: header
+      params: payload
     })
     .then(r => {
       // console.log(r.data)
@@ -178,15 +175,12 @@ export async function fetchWorkerProposals({}, payload = {}) {
 
 export async function fetchWorkerProposalsInbox({}, payload = {}) {
   let url = this._vm.$configFile.get("memberclientstateapi");
-  const header = {
-    "X-DAC-Name": this._vm.$configFile.get("dacscope")
-  };
+
   return this._vm
     .$axios({
       method: "get",
       url: `${url}/proposals_inbox`,
-      params: payload,
-      headers: header
+      params: payload
     })
     .then(r => {
       // console.log(r.data)
@@ -207,15 +201,12 @@ export async function fetchMsigProposals({}, payload = {}) {
   }
   call = this._vm.$axios.CancelToken.source();
   let url = this._vm.$configFile.get("memberclientstateapi");
-  const header = {
-    "X-DAC-Name": this._vm.$configFile.get("dacscope")
-  };
+
   return this._vm
     .$axios({
       method: "get",
       url: `${url}/msig_proposals`,
       params: payload,
-      headers: header,
       cancelToken: call.token
     })
     .then(r => {
@@ -231,15 +222,12 @@ export async function fetchMsigProposals({}, payload = {}) {
 export async function fetchTokenTimeLine({}, payload = {}) {
   // {account: 'piecesnbitss', contract:'kasdactokens', symbol:'KASDAC', start_block:10000000, end_block:17000000}
   let url = this._vm.$configFile.get("memberclientstateapi");
-  const header = {
-    "X-DAC-Name": this._vm.$configFile.get("dacscope")
-  };
+
   return this._vm
     .$axios({
       method: "get",
       url: `${url}/balance_timeline`,
-      params: payload,
-      headers: header
+      params: payload
     })
     .then(r => {
       // console.log(r.data)
