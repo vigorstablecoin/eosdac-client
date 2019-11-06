@@ -2,7 +2,7 @@
   <div>
     <q-collapsible
       group="main-menu-sub"
-      v-if="getIsCustodian"
+      v-if="getIsCandidate"
       class="animate-fade"
     >
       <template slot="header">
@@ -11,6 +11,7 @@
       </template>
       <div class="bg-bg1">
         <q-item
+          v-if="getIsCustodian"
           class="q-pl-lg animate-fade"
           link
           to="/custodian/dac-management"
@@ -21,7 +22,12 @@
           />
         </q-item>
 
-        <q-item class="q-pl-lg animate-fade" link to="/custodian/review-msigs">
+        <q-item
+          class="q-pl-lg animate-fade"
+          link
+          to="/custodian/review-msigs"
+          v-if="getIsCustodian"
+        >
           <q-item-main
             :label="$t('menu.vote_msigs')"
             class="text-text1 text-weight-light"
@@ -109,7 +115,8 @@ export default {
   computed: {
     ...mapGetters({
       getAccountName: "user/getAccountName",
-      getIsCustodian: "user/getIsCustodian"
+      getIsCustodian: "user/getIsCustodian",
+      getIsCandidate: "user/getIsCandidate"
     })
   }
 };
