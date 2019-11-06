@@ -1,6 +1,6 @@
 <template>
   <q-page class="q-pa-md">
-    <div class="row gutter-sm ">
+    <div class="row gutter-sm " v-if="getIsCandidate">
       <div class="col-xs-12 col-md-6 animate-fade">
         <div class="round-borders bg-bg1 bg-logo shadow-4 overflow-hidden">
           <div

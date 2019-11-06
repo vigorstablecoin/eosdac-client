@@ -92,8 +92,7 @@ let routes = [
       */
       {
         path: "my-payments",
-        component: () => import("pages/custodian/my-payments"),
-        beforeEnter: Guards.custodianCheck
+        component: () => import("pages/custodian/my-payments")
       },
       {
         path: "dac-management",
