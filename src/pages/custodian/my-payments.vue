@@ -195,7 +195,7 @@ export default {
         this.$helper.toLocaleNumber(
           total,
           this.$configFile.get("systemtokendecimals")
-        ) + " EOS"
+        ) + this.$configFile.get("systemtokensymbol")
       );
     },
     verifyAndGetRequestedPay() {

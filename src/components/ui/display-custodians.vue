@@ -133,7 +133,7 @@ export default {
         });
         return (
           Date.parse(date.formatDate(end, "YYYY-MM-DD HH:mm:ss")) -
-          Date.parse(new Date())
+          Date.parse(new Date(new Date().toUTCString()))
         );
       }
     }

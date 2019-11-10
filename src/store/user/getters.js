@@ -63,7 +63,11 @@ export function getLastTransaction(state) {
 }
 
 export function getIsCandidate(state, payload) {
-  return state.isCandidate;
+  if (state.isCandidate && getAccountName) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 export function getLanguage(state) {

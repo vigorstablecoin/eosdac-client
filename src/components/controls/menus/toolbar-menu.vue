@@ -6,26 +6,6 @@
         class="row  justify-start gt-md q-mr-xl"
       >
         <q-item class="animate-pop">
-          <q-item-side :icon="$configFile.icon.dactoken" color="text1" />
-          <q-item-main style="margin-left:-5px">
-            <q-item-tile class="text-text2 q-caption" label>{{
-              $t("default.your_token_balance", {
-                tokenName: $configFile.get("dactokensymbol")
-              })
-            }}</q-item-tile>
-            <q-item-tile class="text-text1 q-caption" sublabel
-              ><xspan
-                :value="
-                  $helper.toLocaleNumber(
-                    getDacBalance,
-                    $configFile.get('tokendecimals')
-                  )
-                "
-            /></q-item-tile>
-          </q-item-main>
-        </q-item>
-
-        <q-item class="animate-pop">
           <q-item-side :icon="$configFile.icon.systemtoken" color="text1" />
           <q-item-main style="margin-left:-5px">
             <q-item-tile class="text-text2 q-caption" label>{{

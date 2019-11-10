@@ -133,7 +133,7 @@ export default {
       pagination: {
         page: 1,
         max: 1,
-        items_per_page: 8
+        items_per_page: 48
       },
       filter: "",
       msigs_loading: false
