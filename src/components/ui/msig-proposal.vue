@@ -89,7 +89,7 @@
 
       <!-- mobile details modal -->
       <q-modal maximized v-model="mobile_details_modal">
-        <div class="text-text1 bg-bg2">
+        <div class="text-text1 bg-bg2  full-height">
           <!-- header -->
           <div
             style="height:50px"
@@ -104,7 +104,7 @@
             />
           </div>
           <!-- content -->
-          <div class="q-pa-md ">
+          <div class="q-pa-md  full-height">
             <q-item>
               <q-item-side left>
                 <q-icon
@@ -464,7 +464,7 @@
         <!-- header -->
         <div
           style="height:50px"
-          class="bg-bg1 row items-center justify-between q-px-md"
+          class="bg-bg1 row items-center justify-between q-px-md "
         >
           <span
             >Approvals
@@ -475,7 +475,7 @@
           <q-btn icon="close" @click="approvals_modal = false" flat dense />
         </div>
         <!-- content -->
-        <div class="q-pa-md">
+        <div class="q-pa-md ">
           <div class="row justify-start q-mt-sm">
             <!-- <pre>{{provided_approvals}}</pre> -->
             <div
