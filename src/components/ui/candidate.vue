@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <!--mobile view (small screen)-->
     <div
       class="q-mb-md relative-position bg-bg1 bg-logo round-borders lt-sm"
@@ -23,8 +23,7 @@
         >
           <q-icon
             :title="$t('candidate.nominated_next')"
-            style="margin-top:-5px"
-            v-if="data.rank < 13"
+            v-if="data.rank <= getCustodianConfig.numelected"
             name="fiber_manual_record"
             color="primary"
           />{{ data.candidate_name }}
@@ -113,7 +112,7 @@
           <span>Bio</span>
           <q-btn icon="close" @click="profilemodal = false" flat dense />
         </div>
-        <div class="q-pa-md bg-bg2 ">
+        <div class="q-pa-md bg-bg2 full-height">
           <div class="row items-center q-mb-md">
             <div
               class="profile_image on-left animate-fade relative-position"
@@ -138,7 +137,7 @@
               <q-icon
                 :title="$t('candidate.nominated_next')"
                 style="margin-top:-5px"
-                v-if="data.rank < 13"
+                v-if="data.rank <= getCustodianConfig.numelected"
                 name="fiber_manual_record"
                 color="primary"
               />{{ data.candidate_name }}
@@ -219,7 +218,7 @@
                 <q-icon
                   title="Nominated for next custodian board"
                   style="margin-top:-5px"
-                  v-if="data.rank < 13"
+                  v-if="data.rank <= getCustodianConfig.numelected"
                   name="fiber_manual_record"
                   color="primary"
                 />{{ data.candidate_name }}
@@ -340,7 +339,8 @@ export default {
     ...mapGetters({
       getCustodians: "dac/getCustodians",
       getTokenBalance: "user/getDacBalance",
-      getIsDark: "ui/getIsDark"
+      getIsDark: "ui/getIsDark",
+      getCustodianConfig: "dac/getCustodianConfig"
     }),
     is_custodian() {
       if (this.getCustodians) {
