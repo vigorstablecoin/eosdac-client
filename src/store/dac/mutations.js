@@ -47,3 +47,7 @@ export function setCandidateVote(state, payload) {
 export function setCustodianState(state, payload) {
   state.custodianState = payload;
 }
+
+export function setVotestable(state, payload) {
+  state.votesTable = payload;
+}

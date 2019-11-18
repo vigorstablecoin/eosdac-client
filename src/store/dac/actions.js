@@ -6,14 +6,16 @@ export async function initRoutine({ state, commit, dispatch }, vm) {
   //requests to get dac info, doesn't require user to be logged in
   let requests = [
     api.getMemberTerms(),
-    api.getCustodians(custodianconfig.numelected)
+    api.getCustodians(custodianconfig.numelected),
+    api.getVotesTable()
   ];
 
-  let [memberterms, custodians] = await Promise.all(requests);
+  let [memberterms, custodians, votes] = await Promise.all(requests);
   commit("setMemberTerms", memberterms);
   commit("setCustodians", custodians);
   commit("setCustodianConfig", custodianconfig);
   commit("setIsLoaded", true);
+  commit("setVotestable", votes.rows);
   //load in background
   dispatch("fetchActiveCandidates");
   dispatch("fetchDacAdmins");

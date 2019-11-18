@@ -66,3 +66,7 @@ export function getCustodianState(state) {
 export function getWpCategories(state) {
   return state.wpCategories;
 }
+
+export function getVotesTable(state, payload) {
+  return state.votesTable;
+}

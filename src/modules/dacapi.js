@@ -251,6 +251,21 @@ export class DacApi {
     }
   }
 
+  async getVotesTable() {
+    let votes = await this.eos.get_table_rows({
+      json: true,
+      code: this.configobj.get("custodiancontract"),
+      scope: this.configobj.get("custodiancontract"),
+      table: "votes",
+      limit: -1
+    });
+    if (!votes.rows) {
+      return [];
+    } else {
+      return votes;
+    }
+  }
+
   async getControlledAccounts(accountname) {
     let ctrl = await this.eos.history_get_controlled_accounts(accountname);
     return ctrl;

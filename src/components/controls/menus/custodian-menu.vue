@@ -57,6 +57,12 @@
             class="text-text1 text-weight-light"
           />
         </q-item>
+        <q-item class="q-pl-lg animate-fade" link to="/dac-activity/votes">
+          <q-item-main
+            label="View Votes"
+            class="text-text1 text-weight-light"
+          />
+        </q-item>
       </div>
     </q-collapsible>
 
@@ -97,6 +103,12 @@
         <q-item class="q-pl-lg animate-fade" link to="/dac-activity/financials">
           <q-item-main
             :label="$t('menu.view_financials')"
+            class="text-text1 text-weight-light"
+          />
+        </q-item>
+        <q-item class="q-pl-lg animate-fade" link to="/dac-activity/votes">
+          <q-item-main
+            label="View Votes"
             class="text-text1 text-weight-light"
           />
         </q-item>

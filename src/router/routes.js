@@ -71,6 +71,10 @@ let routes = [
       {
         path: "review-worker-proposals",
         component: () => import("pages/custodian/review-worker-proposals")
+      },
+      {
+        path: "votes",
+        component: () => import("pages/custodian/votes")
       }
     ]
   },
@@ -90,6 +94,10 @@ let routes = [
         component: () => import("pages/custodian/review-worker-proposals")
       },
       */
+      {
+        path: "votes",
+        component: () => import("pages/custodian/votes")
+      },
       {
         path: "my-payments",
         component: () => import("pages/custodian/my-payments"),
