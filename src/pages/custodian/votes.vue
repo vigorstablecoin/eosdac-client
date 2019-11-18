@@ -15,6 +15,7 @@
           :columns="getColumns()"
           row-key="name"
           :rows-per-page-options="[8, 10, 15, 20, 0]"
+          :pagination.sync="paginationControl"
         >
           <q-td slot="body-cell-voter" slot-scope="props" :props="props">
             <router-link class="" :to="{ path: '/profile/' + props.value }">{{
@@ -23,7 +24,19 @@
           </q-td>
 
           <template slot="top-right" slot-scope="props">
-            <q-search v-model="filter" dark placeholder="Voter" />
+            <q-toggle v-model="checked" class="q-mr-md" color="primary-light" />
+            <q-search
+              v-if="checked"
+              v-model="searchbyvoter"
+              dark
+              placeholder="Voter"
+            />
+            <q-search
+              v-if="!checked"
+              v-model="searchvotedfor"
+              dark
+              placeholder="Voted for"
+            />
             <q-btn
               flat
               round
@@ -45,7 +58,10 @@ export default {
   name: "Votes",
   data() {
     return {
-      filter: ""
+      checked: true,
+      searchbyvoter: "",
+      searchvotedfor: "",
+      paginationControl: { rowsPerPage: 10, page: 1 }
     };
   },
   computed: {
@@ -57,8 +73,19 @@ export default {
     getData() {
       if (!this.getVotesTable.length) return [];
       let res = this.getVotesTable;
-      if (this.filter && this.filter.length >= 3) {
-        res = res.filter(r => r.voter.includes(this.filter));
+
+      if (
+        this.searchbyvoter &&
+        this.searchbyvoter.length >= 3 &&
+        this.checked == true
+      ) {
+        res = res.filter(r => r.voter.includes(this.searchbyvoter));
+      } else if (
+        this.searchvotedfor &&
+        this.searchvotedfor.length == 12 &&
+        this.checked == false
+      ) {
+        res = res.filter(r => r.candidates.includes(this.searchvotedfor));
       }
       return res;
     }
@@ -96,7 +123,12 @@ export default {
       ];
     }
   },
-  mounted() {}
+  mounted() {},
+  watch: {
+    checked: function() {
+      this.searchbyvoter = this.searchvotedfor = "";
+    }
+  }
 };
 </script>
 
